@@ -23,7 +23,8 @@
 	},
 	"content_scripts": [
 		{
-			"js": ["src/jquery.js", "background.js"],
+			"js": ["src/js/jquery.js", "background.js"],
+			"css": ["src/css/main.css"],
 			"matches": ["https://www.tiktok.com/*"]
 		}
 	],
