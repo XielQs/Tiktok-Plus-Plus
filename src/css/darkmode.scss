@@ -7,9 +7,24 @@ html {
 }
 .row-layout-background.jsx-1166966984,
 .main-body,
-.side-bar-wrapper.jsx-2836134785 {
+.side-bar-wrapper.jsx-2836134785,
+.discover-list.jsx-587759948 .discover-item-container.jsx-587759948 {
 	background-color: $maincolor;
 }
 .header-container.middle.jsx-3164683951 {
 	background-color: lighten($maincolor, 10%);
+}
+.discover-list.jsx-587759948 .discover-item-container.jsx-587759948 {
+	color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span {
+	color: #fff;
 }
