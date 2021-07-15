@@ -1,30 +1,42 @@
 $maincolor: #0d0d0d;
 
-body,
-html {
+html.darkmode {
 	background-color: $maincolor;
 	color: #fff;
-}
-.row-layout-background.jsx-1166966984,
-.main-body,
-.side-bar-wrapper.jsx-2836134785,
-.discover-list.jsx-587759948 .discover-item-container.jsx-587759948 {
-	background-color: $maincolor;
-}
-.header-container.middle.jsx-3164683951 {
-	background-color: lighten($maincolor, 10%);
-}
-.discover-list.jsx-587759948 .discover-item-container.jsx-587759948 {
-	color: #fff;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p,
-span {
-	color: #fff;
+	body {
+		background-color: $maincolor;
+		color: #fff;
+	}
+	.row-layout-background.jsx-1166966984,
+	.main-body,
+	.side-bar-wrapper.jsx-2836134785,
+	.discover-list.jsx-587759948 .discover-item-container.jsx-587759948,
+	.comment-input-inner-wrapper.jsx-2190728513,
+	.comment-post-outside-container.jsx-3148321798,
+	.comment-input-inner-wrapper .editor .public-DraftEditorPlaceholder-root .public-DraftEditorPlaceholder-inner,
+	.content-container.jsx-3148321798,
+	.comment-container.jsx-3148321798 {
+		background-color: $maincolor !important;
+	}
+	.header-container.middle.jsx-3164683951 {
+		background-color: lighten($maincolor, 10%);
+	}
+	.discover-list.jsx-587759948 .discover-item-container.jsx-587759948 {
+		color: #fff !important;
+	}
+	.copy-link-container.jsx-2335988431 .link-container.jsx-2335988431 {
+		color: rgba(#fff, 0.75);
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	a,
+	p,
+	span,
+	strong {
+		color: #fff !important;
+	}
 }
