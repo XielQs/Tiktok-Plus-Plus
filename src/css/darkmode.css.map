@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CACJ,IAAI,AAAC,CACJ,gBAAgB,CAJL,OAAO,CAKlB,AACD,AAAA,sBAAsB,AAAA,eAAe,AAAC,CACrC,gBAAgB,CAPL,OAAO,CAQlB,AACD,AAAA,iBAAiB,AAAA,OAAO,AAAA,eAAe,AAAC,CACvC,gBAAgB,CAAE,OAAwB,CAC1C",
+    "sources": [
+        "darkmode.scss"
+    ],
+    "names": [],
+    "file": "darkmode.css"
+}
