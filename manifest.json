@@ -1,0 +1,31 @@
+{
+	"name": "Tiktok++",
+	"version": "1.0.0",
+	"manifest_version": 3,
+	"description": "Tiktok++",
+	"author": "GamerboyTR",
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "images/icon_16x.png",
+			"32": "images/icon_32x.png",
+			"48": "images/icon_48x.png",
+			"64": "images/icon_64x.png",
+			"128": "images/icon_128x.png"
+		}
+	},
+	"icons": {
+		"16": "images/icon_16x.png",
+		"32": "images/icon_32x.png",
+		"48": "images/icon_48x.png",
+		"64": "images/icon_64x.png",
+		"128": "images/icon_128x.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["src/jquery.js", "background.js"],
+			"matches": ["https://www.tiktok.com/*"]
+		}
+	],
+	"permissions": ["storage", "activeTab", "scripting"]
+}
