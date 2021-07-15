@@ -5,6 +5,7 @@ $(function () {
 	if (window.location.href.match(/setting/g)) {
 	}
 	if (darkmode) {
+		$("html,body").addClass("darkmode");
 		$("head").append('<link rel="stylesheet" href="https://gamerboytr.github.io/Tiktok-Plus-Plus/src/css/darkmode.css">');
 	}
 });
