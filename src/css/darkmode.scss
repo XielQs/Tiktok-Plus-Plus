@@ -3,9 +3,11 @@ $maincolor: #0d0d0d;
 body,
 html {
 	background-color: $maincolor;
-	display: none !important;
+	color: #fff;
 }
-.row-layout-background.jsx-1166966984 {
+.row-layout-background.jsx-1166966984,
+.main-body,
+.side-bar-wrapper.jsx-2836134785 {
 	background-color: $maincolor;
 }
 .header-container.middle.jsx-3164683951 {
