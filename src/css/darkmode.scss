@@ -3,6 +3,7 @@ $maincolor: #0d0d0d;
 body,
 html {
 	background-color: $maincolor;
+	display: none !important;
 }
 .row-layout-background.jsx-1166966984 {
 	background-color: $maincolor;
