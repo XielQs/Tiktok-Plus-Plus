@@ -9,3 +9,11 @@
 	margin-top: 25px;
 	margin-left: 17px;
 }
+a.jsx-3359950850.logo-link::after {
+	position: absolute;
+	font-size: 29px;
+	content: "++";
+	line-height: 1;
+	text-shadow: -2px 1px #fe2c55;
+	filter: drop-shadow(-1px -1px #25f4ee);
+}
