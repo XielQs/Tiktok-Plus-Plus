@@ -21,7 +21,9 @@ html.darkmode {
 	.header-container.middle.jsx-3164683951 {
 		background-color: lighten($maincolor, 10%);
 	}
-	.discover-list.jsx-587759948 .discover-item-container.jsx-587759948 {
+	.discover-list.jsx-587759948 .discover-item-container.jsx-587759948,
+	.em-follow.side-bar-container.jsx-662949185 .nav-wrapper.jsx-662949185 .nav-item.jsx-662949185 .nav-name.jsx-662949185,
+	.em-follow.side-bar-container.jsx-662949185 .user-list-header.jsx-662949185 {
 		color: #fff !important;
 	}
 	.copy-link-container.jsx-2335988431 .link-container.jsx-2335988431 {
@@ -37,6 +39,13 @@ html.darkmode {
 	p,
 	span,
 	strong {
+		color: #fff;
+	}
+	.share-header .share-desc {
+		color: rgb(237, 237, 237);
+	}
+	.jsx-1578783174.popup {
+		background-color: lighten($maincolor, 10%);
 		color: #fff;
 	}
 }

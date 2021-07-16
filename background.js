@@ -17,6 +17,7 @@ $(function () {
 			)
 			.children("img")
 			.remove();
+		$(".message-icon.jsx-1461660784").css("background-image", "url('https://gamerboytr.github.io/Tiktok-Plus-Plus/src/svg/message-icon.svg')");
 		$("head").append('<link rel="stylesheet" href="https://gamerboytr.github.io/Tiktok-Plus-Plus/src/css/darkmode/darkmode.css">');
 	}
 });
