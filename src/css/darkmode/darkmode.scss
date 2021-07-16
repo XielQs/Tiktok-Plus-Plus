@@ -53,10 +53,13 @@ html.darkmode {
 		background-color: lighten($maincolor, 10%);
 		color: #fff;
 	}
-	.jsx-662949185.nav-icon {
+	.jsx-662949185.nav-icon[fill="#161823"] {
 		fill: #fff;
 	}
 	.video-feed-container.jsx-1860510881 .recommend-feed-title.jsx-1860510881 {
 		color: invert(rgb(22, 24, 35));
+	}
+	.error-page.jsx-1438362720 .title.jsx-1438362720 {
+		color: invert(rgb(18, 18, 18));
 	}
 }

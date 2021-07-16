@@ -32,6 +32,12 @@ $(function () {
 		<i class="fad fa-moon" style="margin-top:4px;font-size:1.2em;color:var(--white)"></i>
 		<span class="jsx-1166966984" style="width:14em">Dark Mode</span>
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
+		</div>
+		<div class="jsx-1166966984 row-layout-nav-item" id="closeRecommendeds-swicth">
+		<i class="fad fa-user-alt"></i>
+		<span class="jsx-1166966984" style="width:14em">Önerilenler Kısmını Kapat</span>
+		<span class="jsx-1166966984 description">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
+		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 		</div>`);
 	}
 	$("#darkmode-swicth").click((e) => {
