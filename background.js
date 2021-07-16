@@ -1,5 +1,6 @@
 "use strict";
 $(function () {
+	//! Fonksiyonlar
 	function setCookie(cname, cvalue, exdays) {
 		var d = new Date();
 		d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -22,37 +23,59 @@ $(function () {
 		}
 		return "";
 	}
-
-	let darkmode = getCookie("mode");
+	//! Tanımlamalar
+	let darkmode = getCookie("mode"),
+		recommendeds = getCookie("recommendeds");
+	//? Log
 	console.log("Tiktok++ has Injected");
+	//! CSS
 	$("head").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
+	$("head").append("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}</style>");
+	//! Kod İşlemleri
 	if (window.location.href.match(/https:\/\/(www\.)?tiktok\.com\/settings?/g)) {
 		$(".jsx-1166966984.row-nav-scroll").append(`<hr><h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3>
-		<div class="jsx-1166966984 row-layout-nav-item" id="darkmode-swicth">
-		<i class="fad fa-moon" style="margin-top:4px;font-size:1.2em;color:var(--white)"></i>
+		<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="darkmode-swicth">
+		<i class="fad fa-moon" style="font-size:1.2em;color:var(--white)"></i>
 		<span class="jsx-1166966984" style="width:14em">Dark Mode</span>
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 		</div>
-		<div class="jsx-1166966984 row-layout-nav-item" id="closeRecommendeds-swicth">
-		<i class="fad fa-user-alt"></i>
+		<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="closeRecommendeds-swicth">
+		<i class="fas fa-user-alt" style="color:var(--white);font-size:1.2em"></i>
 		<span class="jsx-1166966984" style="width:14em">Önerilenler Kısmını Kapat</span>
 		<span class="jsx-1166966984 description">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 		</div>`);
 	}
 	$("#darkmode-swicth").click((e) => {
+		$("#darkmode-swicth .jsx-162805733.switch-container").toggleClass("on");
 		if (getCookie("mode") === "dark") {
 			setCookie("mode", "white", 99999);
 			$("#darkmodeCSS").remove();
-			$("#darkmode-swicth .jsx-162805733.switch-container").toggleClass("on");
 			alert("Dark Mode DeAktif");
 		} else {
 			setCookie("mode", "dark", 99999);
 			$("head").append('<link rel="stylesheet" href="https://gamerboytr.github.io/Tiktok-Plus-Plus/src/css/darkmode/darkmode.css" id="darkmodeCSS">');
-			$("#darkmode-swicth .jsx-162805733.switch-container").toggleClass("on");
 			alert("Dark Mode Aktif");
 		}
 	});
+	$("#closeRecommendeds-swicth").click((e) => {
+		if (getCookie("recommendeds") === "off") {
+			setCookie("recommendeds", "on", 99999);
+			alert("Önerilenler Başarıyla Açıldı");
+			1;
+		} else {
+			setCookie("recommendeds", "off", 99999);
+			alert("Önerilenler Başarıyla Kapatıldı");
+		}
+		$("#closeRecommendeds-swicth .jsx-162805733.switch-container").toggleClass("on");
+	});
+	if (recommendeds === "off") {
+		setInterval(() => {
+			$(".jsx-662949185.user-list.hidden-bottom-line").remove();
+		}, 1);
+		$("#closeRecommendeds-swicth .jsx-162805733.switch-container").addClass("on");
+	}
+	//! DarkMode Kontrol
 	if (darkmode === "dark") {
 		$("#darkmode-swicth .jsx-162805733.switch-container").addClass("on");
 		$("html").addClass("darkmode");
