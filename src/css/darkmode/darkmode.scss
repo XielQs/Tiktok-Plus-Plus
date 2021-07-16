@@ -1,8 +1,12 @@
 $maincolor: #0d0d0d;
+:root {
+	--white: #fff;
+}
 
 html.darkmode {
 	background-color: $maincolor;
 	color: #fff;
+	--white: #000;
 	body {
 		background-color: $maincolor;
 		color: #fff;

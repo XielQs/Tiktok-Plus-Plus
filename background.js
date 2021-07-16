@@ -25,12 +25,13 @@ $(function () {
 
 	let darkmode = getCookie("mode");
 	console.log("Tiktok++ has Injected");
+	$("head").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
 	if (window.location.href.match(/https:\/\/(www\.)?tiktok\.com\/settings?/g)) {
-		$(".jsx-1166966984.row-nav-scroll").append(`<h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3><div class="jsx-1166966984 row-layout-nav-item" id="darkmode-swicth">
-		<div class="jsx-1166966984 row-layout-nav-item">
+		$(".jsx-1166966984.row-nav-scroll").append(`<hr><h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3>
+		<div class="jsx-1166966984 row-layout-nav-item" id="darkmode-swicth">
+		<i class="fad fa-moon" style="margin-top:4px;font-size:1.2em;color:var(--white)"></i>
 		<span class="jsx-1166966984" style="width:14em">Dark Mode</span>
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
-		</div>
 		</div>`);
 	}
 	$("#darkmode-swicth").click((e) => {
