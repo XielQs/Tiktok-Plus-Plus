@@ -29,8 +29,8 @@ $(function () {
 	//? Log
 	console.log("Tiktok++ has Injected");
 	//! CSS
-	$("head").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
 	$("head").append("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}</style>");
+	$("head").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
 	//! Kod İşlemleri
 	if (window.location.href.match(/https:\/\/(www\.)?tiktok\.com\/settings?/g)) {
 		$(".jsx-1166966984.row-nav-scroll").append(`<hr><h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3>
@@ -42,7 +42,7 @@ $(function () {
 		<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="closeRecommendeds-swicth">
 		<i class="fas fa-user-alt" style="color:var(--white);font-size:1.2em"></i>
 		<span class="jsx-1166966984" style="width:14em">Önerilenler Kısmını Kapat</span>
-		<span class="jsx-1166966984 description">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
+		<span class="jsx-1166966984 description text-muted" style="font-size:13px;position:absolute;margin-bottom:-7px;margin-left:23px">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 		</div>`);
 	}
@@ -75,6 +75,7 @@ $(function () {
 		}, 1);
 		$("#closeRecommendeds-swicth .jsx-162805733.switch-container").addClass("on");
 	}
+
 	//! DarkMode Kontrol
 	if (darkmode === "dark") {
 		$("#darkmode-swicth .jsx-162805733.switch-container").addClass("on");
