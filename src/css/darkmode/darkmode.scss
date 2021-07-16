@@ -75,4 +75,14 @@ html.darkmode {
 			color: invert(#161823);
 		}
 	}
+	.video-feed-item.jsx-1938618282 .feed-item-content.jsx-1938618282 .item-follow-wrapper .follow-button {
+		color: #fff;
+		background-color: $maincolor;
+		&:hover {
+			background-color: lighten($maincolor, 10%);
+		}
+	}
+	.error-page.jsx-1438362720 .desc.jsx-1438362720 {
+		color: invert(rgba(18, 18, 18, 0.75));
+	}
 }
