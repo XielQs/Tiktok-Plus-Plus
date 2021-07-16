@@ -1,15 +1,53 @@
 "use strict";
 $(function () {
-	let darkmode = true;
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+		var expires = "expires=" + d.toGMTString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(";");
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == " ") {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+
+	let darkmode = getCookie("mode");
 	console.log("Tiktok++ has Injected");
 	if (window.location.href.match(/https:\/\/(www\.)?tiktok\.com\/settings?/g)) {
-		$(".jsx-1166966984.row-nav-scroll").append(`<h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3><div class="jsx-1166966984 row-layout-nav-item">
+		$(".jsx-1166966984.row-nav-scroll").append(`<h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3><div class="jsx-1166966984 row-layout-nav-item" id="darkmode-swicth">
 		<div class="jsx-1166966984 row-layout-nav-item">
-		<span class="jsx-1166966984 ">Dark Mode</span>
+		<span class="jsx-1166966984" style="width:14em">Dark Mode</span>
+		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 		</div>
 		</div>`);
 	}
-	if (darkmode) {
+	$("#darkmode-swicth").click((e) => {
+		if (getCookie("mode") === "dark") {
+			setCookie("mode", "white", 99999);
+			$("#darkmodeCSS").remove();
+			$("#darkmode-swicth .jsx-162805733.switch-container").toggleClass("on");
+			alert("Dark Mode DeAktif");
+		} else {
+			setCookie("mode", "dark", 99999);
+			$("head").append('<link rel="stylesheet" href="https://gamerboytr.github.io/Tiktok-Plus-Plus/src/css/darkmode/darkmode.css" id="darkmodeCSS">');
+			$("#darkmode-swicth .jsx-162805733.switch-container").toggleClass("on");
+			alert("Dark Mode Aktif");
+		}
+	});
+	if (darkmode === "dark") {
+		$("#darkmode-swicth .jsx-162805733.switch-container").addClass("on");
 		$("html").addClass("darkmode");
 		$(".jsx-3359950850.logo-link")
 			.prepend(
@@ -18,6 +56,6 @@ $(function () {
 			.children("img")
 			.remove();
 		$(".message-icon.jsx-1461660784").css("background-image", "url('https://gamerboytr.github.io/Tiktok-Plus-Plus/src/svg/message-icon.svg')");
-		$("head").append('<link rel="stylesheet" href="https://gamerboytr.github.io/Tiktok-Plus-Plus/src/css/darkmode/darkmode.css">');
+		$("head").append('<link rel="stylesheet" href="https://gamerboytr.github.io/Tiktok-Plus-Plus/src/css/darkmode/darkmode.css" id="darkmodeCSS">');
 	}
 });
