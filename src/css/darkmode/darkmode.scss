@@ -75,7 +75,8 @@ html.darkmode {
 			color: invert(#161823);
 		}
 	}
-	.video-feed-item.jsx-1938618282 .feed-item-content.jsx-1938618282 .item-follow-wrapper .follow-button {
+	.video-feed-item.jsx-1938618282 .feed-item-content.jsx-1938618282 .item-follow-wrapper .follow-button,
+	.user-info.jsx-2829469314 .follow-button {
 		color: #fff;
 		background-color: $maincolor;
 		&:hover {
@@ -84,5 +85,23 @@ html.darkmode {
 	}
 	.error-page.jsx-1438362720 .desc.jsx-1438362720 {
 		color: invert(rgba(18, 18, 18, 0.75));
+	}
+	.comment-pc.jsx-365602788 .comment-text.jsx-365602788 .comment-time.jsx-365602788 {
+		color: invert(rgba(18, 18, 18, 0.5));
+	}
+	.copy-link-container.jsx-2335988431 .copy-container.jsx-2335988431 .word-link.jsx-2335988431 {
+		color: invert(rgb(22, 24, 35));
+	}
+	.profile-card-container.jsx-2083467628 {
+		background-color: #000;
+		color: #fff;
+	}
+	//! Message
+	.jsx-3867589354.desktop-container {
+		background: invert(rgb(248, 248, 248));
+	}
+	.conversation-container.jsx-3025142955,
+	.conversation-list-wrapper {
+		background: #000;
 	}
 }
