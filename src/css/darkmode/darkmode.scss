@@ -101,7 +101,18 @@ html.darkmode {
 		background: invert(rgb(248, 248, 248));
 	}
 	.conversation-container.jsx-3025142955,
-	.conversation-list-wrapper {
+	.conversation-list-wrapper,
+	.embed.jsx-3011359469 {
 		background: #000;
+	}
+	.em-follow.side-bar-container .user-item-inner .user-desc {
+		color: invert(rgba(22, 24, 35, 0.75));
+	}
+	textarea[readonly].jsx-3011359469 {
+		background: #000;
+		color: #fff;
+	}
+	.embed.jsx-3011359469 .embed-desc.jsx-3011359469 {
+		color: invert(rgba(22, 24, 35, 0.5));
 	}
 }
