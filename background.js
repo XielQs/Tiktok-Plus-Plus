@@ -24,12 +24,13 @@ $(function () {
 		return "";
 	}
 	//! Tanımlamalar
+	const version = "1.2.2";
 	let darkmode = getCookie("mode"),
 		recommendeds = getCookie("recommendeds");
 	//? Log
 	console.log("Tiktok++ has Injected");
 	//! CSS
-	$("head").append("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}</style>");
+	$("head").append("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}.tiktokplusplus-owner{color:yellow}.tiktokplusplus-staff{position:absolute}.tiktokplusplus-dearmember{color:#2780e6}</style>");
 	$("head").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
 	//! Kod İşlemleri
 	if (window.location.href.match(/https:\/\/(www\.)?tiktok\.com\/settings?/g)) {
@@ -46,6 +47,37 @@ $(function () {
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 		</div>`);
 	}
+	//! Güncelleme Kontrol
+	$.post("https://www.gamerboytr.ml/TiktokPlusPlus/index.php", "version", (data) => {
+		data = JSON.parse(data);
+		if (data["version"].replaceAll(".", "") > version.replaceAll(".", "")) {
+			$("body").prepend(`<div class="jsx-3148321798 embed-mask">
+			<div class="jsx-3011359469 embed embed-card">
+				<h3 class="jsx-3011359469">Tiktok++ Yeni Güncelleme</h3>
+				<textarea readonly="" rows="7" class="jsx-3011359469 embed-code"></textarea>
+				<p class="jsx-3011359469 button primary">Tamam, Beni Github Sayfasına Götür</p>
+				<p class="jsx-3011359469 button">Hayır, Güncellemek İstemiyorum</p>
+			</div>
+		</div>`);
+		}
+		if (data["version"].replaceAll(".", "") < version.replaceAll(".", "")) {
+			let msg = "Tiktok++ Bir Hata İle Karşılaştı lütfen daha sonra tekrar deneyin";
+			alert(msg);
+			throw new Error(msg);
+		}
+	});
+	//! Reklam
+	setInterval(() => {
+		$.each(Admins, (key, val) => {
+			let regex = new RegExp("tiktok.com/@" + val["username"], "g");
+			if (window.location.href.match(regex)) {
+				if (!$(".tiktokplusplus-staff").length) {
+					$(".share-title-container .share-sub-title").after('<div class="tiktokplusplus-staff tiktokplusplus-' + val["perm_level"] + '">' + val["perm_name"] + "</div>");
+					$(".share-title-container .share-follow-container").css("margin-top", "23px");
+				}
+			}
+		});
+	}, 1000);
 	$("#darkmode-swicth").click((e) => {
 		$("#darkmode-swicth .jsx-162805733.switch-container").toggleClass("on");
 		if (getCookie("mode") === "dark") {
@@ -72,7 +104,7 @@ $(function () {
 	if (recommendeds === "off") {
 		setInterval(() => {
 			$(".jsx-662949185.user-list.hidden-bottom-line").remove();
-		}, 1);
+		}, 1000);
 		$("#closeRecommendeds-swicth .jsx-162805733.switch-container").addClass("on");
 	}
 
