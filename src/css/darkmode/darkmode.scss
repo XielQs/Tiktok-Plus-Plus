@@ -133,4 +133,21 @@ html.darkmode {
 	.option.jsx-4177598563:hover {
 		background: invert(rgba(22, 24, 35, 0.3));
 	}
+	.app-promotion.jsx-3128248810 .promotion-expand.jsx-3128248810 {
+		background: #000;
+		border-color: invert(rgba(22, 24, 35, 0.12));
+		.promotion-text-container.jsx-3128248810:hover {
+			background: invert(rgba(22, 24, 35, 0.3));
+		}
+	}
+	.row-layout-nav.jsx-1166966984 .row-nav-scroll.jsx-1166966984 {
+		background: #000;
+		box-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
+	}
+	.row-layout-nav.jsx-1166966984 .row-layout-nav-item.jsx-1166966984 span.jsx-1166966984 {
+		color: invert(#161823);
+	}
+	.row-layout-nav.jsx-1166966984 .row-layout-nav-item.jsx-1166966984 svg {
+		fill: invert(#161823);
+	}
 }

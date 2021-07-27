@@ -1,6 +1,5 @@
-@import "./vendor/messages";
-@import "./modal/modal";
-@import "./modal/variables";
+@import url("./vendor/modals.css");
+@import url("./vendor/messages/messages.css");
 .text-muted {
 	color: #6c757d !important;
 }
@@ -19,3 +18,14 @@ a.jsx-3359950850.logo-link::after {
 	text-shadow: -2px 1px #fe2c55;
 	filter: drop-shadow(-1px -1px #25f4ee);
 }
+//! messages
+.conversation-header.jsx-3025142955 .send-fail-tip-container.jsx-3025142955 {
+	bottom: -22rem !important;
+	z-index: 5 !important;
+	pointer-events: none !important;
+	user-select: none !important;
+	> .jsx-3025142955.send-fail-tip {
+		background-color: #fff !important;
+	}
+}
+//? Endİf
