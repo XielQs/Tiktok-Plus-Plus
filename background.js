@@ -1,3 +1,9 @@
+/*!
+ * Tiktok++ v1.2.3
+ * Copyright 2011-2021 The Tiktok++ Authors
+ * Copyright 2011-2021 TikTok, Inc.
+ * Licensed under MIT (https://github.com/gamerboytr/Tiktok-Plus-Plus/blob/master/LICENSE)
+ */
 "use strict";
 $(function () {
 	//! Fonksiyonlar
@@ -24,41 +30,77 @@ $(function () {
 		return "";
 	}
 	//! Tanımlamalar
-	const version = "1.2.2";
+	const version = "1.3.0";
 	let darkmode = getCookie("mode"),
 		recommendeds = getCookie("recommendeds");
 	//? Log
 	console.log("Tiktok++ has Injected");
 	//! CSS
-	$("head").append("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}.tiktokplusplus-owner{color:yellow}.tiktokplusplus-staff{position:absolute}.tiktokplusplus-dearmember{color:#2780e6}</style>");
-	$("head").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
+	$("head").prepend("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}.tiktokplusplus-owner{color:yellow}.tiktokplusplus-staff{position:absolute}.tiktokplusplus-dearmember{color:#2780e6}</style>");
+	$("head").prepend('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
 	//! Kod İşlemleri
-	if (window.location.href.match(/https:\/\/(www\.)?tiktok\.com\/settings?/g)) {
+	//! Ayarlar
+	if (window.location.href.match(/https?:\/\/(www\.)?tiktok\.com\/settings?/g)) {
 		$(".jsx-1166966984.row-nav-scroll").append(`<hr><h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3>
 		<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="darkmode-swicth">
-		<i class="fad fa-moon" style="font-size:1.2em;color:var(--white)"></i>
+		<i class="fad fa-moon" style="font-size:1.2em"></i>
 		<span class="jsx-1166966984" style="width:14em">Dark Mode</span>
 		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
-		</div>
-		<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="closeRecommendeds-swicth">
-		<i class="fas fa-user-alt" style="color:var(--white);font-size:1.2em"></i>
-		<span class="jsx-1166966984" style="width:14em">Önerilenler Kısmını Kapat</span>
-		<span class="jsx-1166966984 description text-muted" style="font-size:13px;position:absolute;margin-bottom:-7px;margin-left:23px">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
-		<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
-		</div>`);
+	</div>
+	<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="closeRecommendeds-swicth">
+	<i class="fas fa-user-alt" style="font-size:1.2em"></i>
+	<span class="jsx-1166966984" style="width:14em">Önerilenler Kısmını Kapat</span>
+	<span class="jsx-1166966984 description text-muted" style="font-size:13px;position:absolute;margin-bottom:-7px;margin-left:23px">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
+	<div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
+	</div>`);
 	}
+	//? Endİf
+	$(".copyright").text($(".copyright").text().replaceAll("TikTok", "Tiktok++"));
 	//! Güncelleme Kontrol
 	$.post("https://www.gamerboytr.ml/TiktokPlusPlus/index.php", "version", (data) => {
 		data = JSON.parse(data);
 		if (data["version"].replaceAll(".", "") > version.replaceAll(".", "")) {
-			$("body").prepend(`<div class="jsx-3148321798 embed-mask">
-			<div class="jsx-3011359469 embed embed-card">
-				<h3 class="jsx-3011359469">Tiktok++ Yeni Güncelleme</h3>
-				<textarea readonly="" rows="7" class="jsx-3011359469 embed-code"></textarea>
-				<p class="jsx-3011359469 button primary">Tamam, Beni Github Sayfasına Götür</p>
-				<p class="jsx-3011359469 button">Hayır, Güncellemek İstemiyorum</p>
+			$("body").prepend(`<div class="modal fade" id="updateTiktokPlusPlus" tabindex="-1">
+			<div class="modal-dialog" style="transform: none">
+				<div class="modal-content">
+						<div class="modal-header">
+						<h2 class="modal-title">Tiktok++ Güncelleme Yardımcısı</h2>
+						</div>
+						<div class="modal-body">
+						<p>Oh, Görnüşe Göre Yeni Bir Güncelleme Var!</p>
+						<p>Değişiklikler :</p>
+						<p>${data["changelog"]}<p>
+						</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hayır, Güncellemek İstemiyorum</button>
+					<button type="button" class="btn btn-primary">Tamam</button>
+					</div>
+				</div>
 			</div>
-		</div>`);
+		</div>
+		<div class="modal-backdrop fade show" id="updateTiktokPlusPlusBackdrop"></div>`);
+			$("#updateTiktokPlusPlus .btn-secondary").click(() => {
+				$("#updateTiktokPlusPlusBackdrop").remove();
+			});
+			$("#updateTiktokPlusPlus .btn-primary").click(() => {
+				let a = document.createElement("a");
+				a.setAttribute("download", "Tiktok-Plus-Plus");
+				a.setAttribute("href", "https://github.com/gamerboytr/Tiktok-Plus-Plus/archive/refs/heads/main.zip");
+				a.click();
+				a.remove();
+				$("#updateTiktokPlusPlus").remove();
+				$("#updateTiktokPlusPlusBackdrop").remove();
+			});
+			let updateModal = new bootstrap.Modal(document.getElementById("updateTiktokPlusPlus"), {
+				keyboard: false,
+				focus: false,
+				backdrop: false,
+			});
+			updateModal.show();
+			setTimeout(() => {
+				$("#updateTiktokPlusPlus").css("opacity", "1");
+				$("#updateTiktokPlusPlusBackdrop").css("opacity", ".5");
+			}, 2000);
 		}
 		if (data["version"].replaceAll(".", "") < version.replaceAll(".", "")) {
 			let msg = "Tiktok++ Bir Hata İle Karşılaştı lütfen daha sonra tekrar deneyin";

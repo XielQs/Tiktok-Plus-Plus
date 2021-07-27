@@ -1,6 +1,6 @@
 {
 	"name": "Tiktok++",
-	"version": "1.2.3",
+	"version": "1.2.5",
 	"manifest_version": 3,
 	"description": "Tiktok++ Sayesinde Gelişmiş Bir Tiktok Kazanın.Tamamıyla Türkler Tarafından Üretilmiş Tiktok++'ı Sende Dene!",
 	"author": "GamerboyTR",
@@ -24,7 +24,7 @@
 	"content_scripts": [
 		{
 			"js": ["src/js/jquery.js", "src/js/bootstrap.js", "src/js/admins.js", "background.js"],
-			"css": ["src/css/main.css"],
+			"css": ["src/css/main.css", "src/css/modals.css"],
 			"matches": ["https://www.tiktok.com/*"]
 		}
 	],
