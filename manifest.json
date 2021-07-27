@@ -24,7 +24,7 @@
 	"content_scripts": [
 		{
 			"js": ["src/js/jquery.js", "src/js/bootstrap.js", "src/js/admins.js", "background.js"],
-			"css": ["src/css/main.css", "src/css/modals.css"],
+			"css": ["src/css/darkmode/darkmode.css", "src/css/main.css", "src/css/modals.css"],
 			"matches": ["https://www.tiktok.com/*"]
 		}
 	],
