@@ -2,13 +2,13 @@ const Admins = [
 	{
 		name: "GamerboyTR",
 		perm_level: "owner",
-		username: "_nebakyonyusufiste_",
+		username: "gamerboytr.offical",
 		perm_name: "Tiktok++ Kurucusu",
 	},
 	{
 		name: "Mabel",
 		perm_level: "dearmember",
-		username: "nebakyonmabeliste",
+		username: "razorhamyapbeni",
 		perm_name: "Değerli Üye",
 	},
 ];
