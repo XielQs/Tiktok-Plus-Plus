@@ -96,6 +96,17 @@ html.darkmode {
 		background-color: #000;
 		color: #fff;
 	}
+	.nav-item.jsx-808409778 .nav-name.jsx-808409778 {
+		color: invert(#161823);
+	}
+	.side-bar.jsx-808409778 .user-list-header.jsx-808409778 {
+		color: invert(rgba(22, 24, 35, 0.75));
+	}
+	.side-bar.jsx-808409778 .bottom-wrapper.jsx-808409778 .copyright.jsx-808409778,
+	.side-bar.jsx-808409778 .bottom-wrapper.jsx-808409778 .more-word.jsx-808409778,
+	.side-bar.jsx-808409778 .bottom-wrapper.jsx-808409778 a.jsx-808409778 {
+		color: invert(rgba(22, 24, 35, 0.5));
+	}
 	//! Message
 	.jsx-3867589354.desktop-container {
 		background: invert(rgb(248, 248, 248));
@@ -114,5 +125,12 @@ html.darkmode {
 	}
 	.embed.jsx-3011359469 .embed-desc.jsx-3011359469 {
 		color: invert(rgba(22, 24, 35, 0.5));
+	}
+	//? Endİf
+	.option.jsx-4177598563 i.jsx-4177598563 {
+		color: invert(#161823);
+	}
+	.option.jsx-4177598563:hover {
+		background: invert(rgba(22, 24, 35, 0.3));
 	}
 }
