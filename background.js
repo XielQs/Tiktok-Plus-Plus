@@ -1,7 +1,7 @@
 /*!
- * Tiktok++ v1.2.3
- * Copyright 2011-2021 The Tiktok++ Authors
- * Copyright 2011-2021 TikTok, Inc.
+ * Tiktok++ v1.3.0
+ * Copyright 20021-2021 The Tiktok++ Authors
+ * Copyright 2021-2021 TikTok, Inc.
  * Licensed under MIT (https://github.com/gamerboytr/Tiktok-Plus-Plus/blob/master/LICENSE)
  */
 "use strict";
