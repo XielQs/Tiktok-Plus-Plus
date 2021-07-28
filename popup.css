@@ -1,0 +1,134 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+:root {
+	--color-primary: #f7f7f7;
+	--gray-primary: #4a4a4a;
+	--box-shadow-primary: 0 2px 4px 0 hsla(0, 0%, 84%, 0.5);
+}
+html,
+body {
+	width: 340px;
+	height: auto;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	background-color: var(--color-primary);
+	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
+}
+html.ignore body,
+html.ignore {
+	/* height: 320px; */
+}
+html.ignore .wrapper .main {
+	height: 42%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin: 85px;
+}
+.wrapper .logo {
+	font-size: 20px;
+}
+.wrapper .logo a {
+	margin-left: 5px;
+	font-weight: 600;
+}
+.wrapper .navbar {
+	width: 100%;
+	position: absolute;
+	z-index: 100;
+	height: 70px;
+	background: #fff;
+	padding: 16px;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid #d4d4d4;
+}
+.wrapper .main {
+	background-color: #fff;
+	width: 90%;
+	height: 77%;
+	position: relative;
+	margin-top: 25px;
+	padding: 16px;
+	border-radius: 5px;
+	box-shadow: var(--box-shadow-primary);
+}
+.wrapper .main .title {
+	color: var(--gray-primary);
+	font-size: 12px !important;
+	font-weight: 900;
+	position: absolute;
+	top: -27px;
+	left: 0;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+.wrapper .buttons {
+	position: absolute;
+	font-size: 14px;
+	bottom: 5px;
+}
+#options {
+	width: 17px;
+	height: 17px;
+	border: 0;
+	opacity: 0.5;
+	background-image: url(src/svg/gear.svg?background#background);
+	background-repeat: no-repeat;
+	transition: opacity 0.1s ease-in;
+	flex-shrink: 0;
+}
+#options:hover {
+	opacity: 1;
+}
+.wrapper .options {
+	margin-top: 25px;
+	width: 90%;
+}
+.wrapper .options .background-icon {
+	padding-left: 17px;
+	background-position: left;
+	background-repeat: no-repeat;
+	line-height: 17px;
+}
+.wrapper .options button {
+	width: 100%;
+	padding: calc(16px / 2);
+	border-radius: 6px;
+	font-size: 12px;
+	text-align: center;
+	transition: border 0.3s ease-in;
+	background: none;
+}
+.wrapper .options .report-isuless {
+	border: 1px solid #e6e6e6;
+	color: #585858;
+}
+.wrapper .options .report-isuless:hover,
+.wrapper .options .report-isuless:focus {
+	border-color: #acacac;
+	outline: none;
+}
+.wrapper .options .report-isuless > span {
+	background-size: 12px;
+	background-image: url(src/svg/report-issue.svg);
+}
+.tiktokplusplus-active {
+	display: none;
+}
