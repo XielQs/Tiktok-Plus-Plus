@@ -1,6 +1,6 @@
 {
 	"name": "Tiktok++",
-	"version": "1.3.0",
+	"version": "1.3.3",
 	"manifest_version": 3,
 	"description": "Tiktok++ Sayesinde Gelişmiş Bir Tiktok Kazanın.Tamamıyla Türkler Tarafından Üretilmiş Tiktok++'ı Sende Dene!",
 	"author": "GamerboyTR",
@@ -11,7 +11,9 @@
 			"32": "images/icon_32x.png",
 			"48": "images/icon_48x.png",
 			"64": "images/icon_64x.png",
-			"128": "images/icon_128x.png"
+			"128": "images/icon_128x.png",
+			"512": "images/icon_512x.png",
+			"750": "images/icon_750x.png"
 		}
 	},
 	"icons": {
@@ -19,14 +21,20 @@
 		"32": "images/icon_32x.png",
 		"48": "images/icon_48x.png",
 		"64": "images/icon_64x.png",
-		"128": "images/icon_128x.png"
+		"128": "images/icon_128x.png",
+		"512": "images/icon_512x.png",
+		"750": "images/icon_750x.png"
 	},
 	"content_scripts": [
 		{
+			"all_frames": true,
 			"js": ["src/js/jquery.js", "src/js/bootstrap.js", "src/js/admins.js", "background.js"],
 			"css": ["src/css/darkmode/darkmode.css", "src/css/main.css", "src/css/modals.css"],
-			"matches": ["https://www.tiktok.com/*"]
+			"matches": ["*://tiktok.com/*", "*://www.tiktok.com/*"],
+			"run_at": "document_start"
 		}
 	],
-	"permissions": ["storage", "activeTab", "scripting"]
+	"options_page": "options.html",
+	"permissions": ["storage", "activeTab", "tabs", "scripting", "cookies"],
+	"update_url": "https://clients2.google.com/service/update2/crx"
 }
