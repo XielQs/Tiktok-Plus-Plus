@@ -1,11 +1,11 @@
 {
 	"name": "Tiktok++",
-	"version": "1.3.3",
+	"version": "1.4.0",
 	"manifest_version": 3,
 	"description": "Tiktok++ Sayesinde Gelişmiş Bir Tiktok Kazanın.Tamamıyla Türkler Tarafından Üretilmiş Tiktok++'ı Sende Dene!",
 	"author": "GamerboyTR",
 	"action": {
-		"default_popup": "popup.html",
+		"default_popup": "src/popup/popup.html",
 		"default_icon": {
 			"16": "images/icon_16x.png",
 			"32": "images/icon_32x.png",
