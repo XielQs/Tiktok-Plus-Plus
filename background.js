@@ -1,5 +1,5 @@
 /*!
- * Tiktok++ v1.3.3
+ * Tiktok++ v1.4.0
  * Copyright 20021-2021 The Tiktok++ Authors
  * Copyright 2021-2021 TikTok, Inc.
  * Licensed under MIT (https://github.com/gamerboytr/Tiktok-Plus-Plus/blob/master/LICENSE)
@@ -30,7 +30,7 @@ $(function () {
 		return "";
 	}
 	//! Tanımlamalar
-	const version = "1.3.3";
+	const version = "1.4.0";
 	let darkmode = getCookie("mode"),
 		recommendeds = getCookie("recommendeds"),
 		thisUrl = window.location.href;
@@ -38,7 +38,8 @@ $(function () {
 	chrome.storage.sync.get(["active"], (result) => {
 		if (result.active === "yes") {
 			//? Log
-			console.log("Tiktok++ has Injected");
+			console.log("Tiktok++ Has Injected");
+			$("html").addClass("plusplus");
 			//! CSS
 			$("head").prepend("<!-- Code Injected By Tiktok++ --><style>.tiktokplusplus-option i{margin-right:5px}.tiktokplusplus-owner{color:yellow}.tiktokplusplus-staff{position:absolute}.tiktokplusplus-dearmember{color:#2780e6}</style>");
 			$("head").prepend('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" />');
@@ -56,38 +57,60 @@ $(function () {
 				//! Windown Location Change
 				if (thisUrl !== window.location.href) {
 					//! Yorumlarda Arama
-					if ($(".jsx-3148321798.video-infos-container")) {
-						$(".jsx-3148321798.video-infos-container .copy-link-container").after(`<div class="searchCommentsWrapper" style="text-align:center;">
+					if ($(".jsx-3748520549.video-infos-container")) {
+						$(".jsx-3748520549.video-infos-container .copy-link-container").after(`<div class="searchCommentsWrapper" style="text-align:center;">
 				<div class="input">
-				<input type="text" class="form-control" id="searchCommentsInput" autocomplete="off" placeholder="Yorumlarada Ara.." title="Çok Yakında..." disabled/>
+				<input type="text" class="form-control" id="searchCommentsInput" autocomplete="off" placeholder="Yorumlarada Ara.."/>
 				</div>
-				<div class="count">${$(".action-wrapper-v2 .jsx-956042027.comment-text").text()}</div>
 				</div>`);
 					}
 					$("#searchCommentsInput").on("input", (e) => {
-						let msg = e.target.value;
-						for (let i = 0; i < $(".jsx-966068288.comment-item.comment-pc").length; i++) {
-							let el = $(".jsx-966068288.comment-item.comment-pc .comment-text>span").eq(i).text(),
-								regex = new RegExp(msg, "g");
-							if (!el.match(regex)) {
-								// console.log(el);
-								// $(el).parent().parent().parent().parent().remove();
+						let txtValue, input, filter, li, a, i;
+						input = document.getElementById("searchCommentsInput");
+						filter = input.value.toUpperCase();
+						li = document.querySelectorAll(".comments .comment-item");
+						for (i = 0; i < li.length; i++) {
+							a = li[i].querySelectorAll(".comment-text>span")[0];
+							txtValue = a.textContent || a.innerText;
+							if (txtValue.toUpperCase().indexOf(filter) > -1) {
+								li[i].style.display = "";
+							} else {
+								li[i].style.display = "none";
 							}
 						}
+					});
+					//? Endİf
+					//! Avatar
+					$(".tiktok-avatar.tiktok-avatar-circle.avatar").on("click", () => {
+						let avatarDiv = $(".image-wrap.big.user-page-header .tiktok-avatar.tiktok-avatar-circle.avatar");
+						let avatarUrl = $(avatarDiv).children("img").attr("src");
+						window.open(avatarUrl, "_blank");
 					});
 					//? Endİf
 					thisUrl = window.location.href;
 				}
 			}, 1);
+			//! Seçenekler Dropdown
+			$(".jsx-2570553545.icon-wrap.avatar").hover((e) => {
+				if (!document.querySelector(".jsx-2570553545 .jsx-2570553545.option.premium")) {
+					$(".jsx-2570553545.header-setting-wrap .jsx-2570553545 .feedback").parent().after(`<hr class="jsx-2570553545 logout-line">
+					<div style="text-align: center;line-hegiht:.5rem;font-weight:bold">TikTok++</div>
+					<div class="jsx-2570553545">
+					<a class="jsx-2570553545 option premium" title="Çok Yakında"><i class="jsx-2570553545"><i class="fas fa-gem"></i></i>TikTok Premium</a>
+				</div>
+				`);
+				}
+			});
+			//? Endİf
 			//! Ayarlar
 			if (window.location.href.match(/https?:\/\/(www\.)?tiktok\.com\/settings?/g)) {
-				$(".jsx-1166966984.row-nav-scroll").append(`<hr><h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3>
-				<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="darkmode-swicth">
+				$(".jsx-855016746.row-nav-scroll").append(`<hr><h3 style="text-align:center;color:#6c757d!important;">Tiktok++</h3>
+				<div class="jsx-855016746 row-layout-nav-item tiktokplusplus-option" id="darkmode-swicth">
 				<i class="fad fa-moon" style="font-size:1.2em"></i>
 				<span class="jsx-1166966984" style="width:14em">Dark Mode</span>
 <div class="jsx-1459454991"><div class="jsx-162805733 switch-container"><div class="jsx-162805733 switch"></div></div></div>
 </div>
-<div class="jsx-1166966984 row-layout-nav-item tiktokplusplus-option" id="closeRecommendeds-swicth">
+<div class="jsx-855016746 row-layout-nav-item tiktokplusplus-option" id="closeRecommendeds-swicth">
 <i class="fas fa-user-alt" style="font-size:1.2em"></i>
 <span class="jsx-1166966984" style="width:14em">Önerilenler Kısmını Kapat</span>
 <span class="jsx-1166966984 description text-muted" style="font-size:13px;position:absolute;margin-bottom:-7px;margin-left:23px">Yan Kısımda Bulunan Önerilenler Kısmını Kapatır</span>
@@ -205,7 +228,6 @@ $(function () {
 			}
 		} else {
 			console.log("Tiktok++ Durduruldu");
-			$("head").append("<style>a.jsx-3359950850.logo-link::after{display:none}</style>");
 		}
 	});
 });
