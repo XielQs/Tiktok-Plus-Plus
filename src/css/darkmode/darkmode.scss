@@ -3,7 +3,7 @@ $maincolor: #0d0d0d;
 	--white: #fff;
 }
 
-html.darkmode {
+html.plusplus.darkmode {
 	background-color: $maincolor;
 	color: #fff;
 	--white: #000;
@@ -23,12 +23,12 @@ html.darkmode {
 	.tiktok-modal__modal-wrapper {
 		background-color: $maincolor !important;
 	}
-	.header-container.middle.jsx-3164683951 {
+	.jsx-1925343495.header-container.middle {
 		background-color: lighten($maincolor, 10%);
 	}
 	.discover-list.jsx-587759948 .discover-item-container.jsx-587759948,
-	.em-follow.side-bar-container.jsx-662949185 .nav-wrapper.jsx-662949185 .nav-item.jsx-662949185 .nav-name.jsx-662949185,
-	.em-follow.side-bar-container.jsx-662949185 .user-list-header.jsx-662949185 {
+	.em-follow.side-bar-container .nav-wrapper.jsx-662949185 .nav-item.jsx-662949185 .nav-name.jsx-662949185,
+	.em-follow.side-bar-container .user-list-header {
 		color: #fff !important;
 	}
 	.copy-link-container.jsx-2335988431 .link-container.jsx-2335988431 {
@@ -49,13 +49,16 @@ html.darkmode {
 	.share-header .share-desc {
 		color: rgb(237, 237, 237);
 	}
-	.jsx-1578783174.popup {
-		background-color: lighten($maincolor, 10%);
-		color: #fff;
+	.popup,
+	.more-popup {
+		background-color: lighten($maincolor, 10%) !important;
 	}
-	.jsx-662949185.nav-icon[fill="#161823"],
-	.option.jsx-4177598563 {
-		fill: #fff;
+	.popup *,
+	.more-popup * {
+		color: #fff !important;
+	}
+	.jsx-2315075850.nav-icon[fill="#161823"] {
+		fill: #fff !important;
 	}
 	.video-feed-container.jsx-1860510881 .recommend-feed-title.jsx-1860510881 {
 		color: invert(rgb(22, 24, 35));
@@ -69,9 +72,9 @@ html.darkmode {
 	.tiktok-btn-pc-line {
 		color: #000;
 	}
-	.option.jsx-4177598563 {
+	.option.jsx-2570553545 {
 		color: #fff;
-		.option.jsx-4177598563 i.jsx-4177598563 {
+		i.jsx-2570553545 {
 			color: invert(#161823);
 		}
 	}
@@ -96,16 +99,16 @@ html.darkmode {
 		background-color: #000;
 		color: #fff;
 	}
-	.nav-item.jsx-808409778 .nav-name.jsx-808409778 {
+	.nav-item.jsx-2315075850:not(.active) .nav-name.jsx-2315075850 {
 		color: invert(#161823);
 	}
-	.side-bar.jsx-808409778 .user-list-header.jsx-808409778 {
+	.side-bar.jsx-2315075850 .user-list-header {
 		color: invert(rgba(22, 24, 35, 0.75));
 	}
-	.side-bar.jsx-808409778 .bottom-wrapper.jsx-808409778 .copyright.jsx-808409778,
-	.side-bar.jsx-808409778 .bottom-wrapper.jsx-808409778 .more-word.jsx-808409778,
-	.side-bar.jsx-808409778 .bottom-wrapper.jsx-808409778 a.jsx-808409778 {
-		color: invert(rgba(22, 24, 35, 0.5));
+	.bottom-wrapper.jsx-2315075850 .copyright.jsx-2315075850,
+	.bottom-wrapper.jsx-2315075850 .more-word.jsx-2315075850,
+	.bottom-wrapper.jsx-2315075850 a.jsx-2315075850 {
+		color: invert(rgba(22, 24, 35, 0.5)) !important;
 	}
 	//! Message
 	.jsx-3867589354.desktop-container {
@@ -117,7 +120,7 @@ html.darkmode {
 		background: #000;
 	}
 	.em-follow.side-bar-container .user-item-inner .user-desc {
-		color: invert(rgba(22, 24, 35, 0.75));
+		color: invert(rgba(22, 24, 35, 0.75)) !important;
 	}
 	textarea[readonly].jsx-3011359469 {
 		background: #000;
@@ -127,10 +130,10 @@ html.darkmode {
 		color: invert(rgba(22, 24, 35, 0.5));
 	}
 	//? Endİf
-	.option.jsx-4177598563 i.jsx-4177598563 {
+	.option.jsx-2570553545 i.jsx-4177598563 {
 		color: invert(#161823);
 	}
-	.option.jsx-4177598563:hover {
+	.option.jsx-2570553545:hover {
 		background: invert(rgba(22, 24, 35, 0.3));
 	}
 	.app-promotion.jsx-3128248810 .promotion-expand.jsx-3128248810 {
@@ -140,14 +143,14 @@ html.darkmode {
 			background: invert(rgba(22, 24, 35, 0.3));
 		}
 	}
-	.row-layout-nav.jsx-1166966984 .row-nav-scroll.jsx-1166966984 {
+	.row-layout-nav.jsx-855016746 .row-nav-scroll.jsx-855016746 {
 		background: #000;
 		box-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
 	}
-	.row-layout-nav.jsx-1166966984 .row-layout-nav-item.jsx-1166966984 span.jsx-1166966984 {
+	.row-layout-nav.jsx-855016746 .row-layout-nav-item.jsx-855016746 span.jsx-855016746 {
 		color: invert(#161823);
 	}
-	.row-layout-nav.jsx-1166966984 .row-layout-nav-item.jsx-1166966984 svg {
+	.row-layout-nav.jsx-855016746 .row-layout-nav-item.jsx-855016746 svg {
 		fill: invert(#161823);
 	}
 	svg.jsx-3359950850.logo-icon path[fill="black"] {
