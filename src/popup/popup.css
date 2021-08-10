@@ -44,7 +44,7 @@ html.ignore .wrapper .main {
 .wrapper .logo {
 	font-size: 20px;
 }
-.wrapper .logo a {
+.wrapper .logo > img + span {
 	margin-left: 5px;
 	font-weight: 600;
 }
@@ -89,7 +89,8 @@ html.ignore .wrapper .main {
 	height: 17px;
 	border: 0;
 	opacity: 0.5;
-	background-image: url(src/svg/gear.svg?background#background);
+	background: none;
+	background-image: url(../svg/gear.svg?background#background);
 	background-repeat: no-repeat;
 	transition: opacity 0.1s ease-in;
 	flex-shrink: 0;
@@ -127,7 +128,7 @@ html.ignore .wrapper .main {
 }
 .wrapper .options .report-isuless > span {
 	background-size: 12px;
-	background-image: url(src/svg/report-issue.svg);
+	background-image: url(../svg/report-issue.svg);
 }
 .tiktokplusplus-active {
 	display: none;
